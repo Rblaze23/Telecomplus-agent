@@ -112,8 +112,8 @@ Système agentique multi-source pour le support client de TelecomPlus. Le systè
 
 ### 1. Cloner et créer une branche
 ```bash
-git clone https://github.com/BastinFlorian/dauphine-project-iasd-2025
-cd dauphine-project-iasd-2025
+git clone https://github.com/Rblaze23/telecomplus-agent.git
+cd telecomplus-agent
 git checkout -b FEATURE/votre-nom
 ```
 
