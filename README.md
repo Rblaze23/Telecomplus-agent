@@ -136,7 +136,7 @@ pip install -r requirements.txt
 ### 4. Configurer l'API Gemini
 Créer un fichier `.env` à la racine:
 ```
-GOOGLE_API_KEY=AIzaSyB2AV05INJkOvzlGN_IA5EDKAHtIVG1Omc
+GOOGLE_API_KEY="key"
 ```
 
 ---
