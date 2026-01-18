@@ -219,56 +219,7 @@ def fallback_query(question: str, dfs: Dict[str, pd.DataFrame],
     return "Aucune donnée trouvée pour cette question."
 
 
-def query_excel(question: str, dfs: Dict[str, pd.DataFrame]) -> Any:
-    """Legacy function for backwards compatibility.
-    
-    This is the old simple version. Kept for compatibility.
-    
-    Args:
-        question: User's question
-        dfs: Dictionary of dataframes
-        
-    Returns:
-        Query results
-    """
-    q_lower = question.lower()
-    
-    if "facture" in q_lower:
-        df = dfs.get("factures")
-        if df is not None and not df.empty:
-            return {
-                "table": "factures",
-                "data": df.head(5).to_dict('records')
-            }
-    
-    if "client" in q_lower:
-        df = dfs.get("clients")
-        if df is not None and not df.empty:
-            return {
-                "table": "clients",
-                "data": df.head(5).to_dict('records')
-            }
-    
-    if "consommation" in q_lower:
-        df = dfs.get("consommation")
-        if df is not None and not df.empty:
-            return {
-                "table": "consommation",
-                "data": df.head(5).to_dict('records')
-            }
-    
-    if "forfait" in q_lower:
-        df = dfs.get("forfaits")
-        if df is not None and not df.empty:
-            return {
-                "table": "forfaits",
-                "data": df.head(5).to_dict('records')
-            }
-    
-    return "Aucune donnée trouvée pour cette question."
-
-
-# Test if run directly
+# Test
 if __name__ == "__main__":
     from load_data import load_dataframes
     
