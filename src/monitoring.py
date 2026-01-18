@@ -286,7 +286,7 @@ def log_agent_activity(event_type: str, data: Dict[str, Any]):
     monitor = get_monitor()
     monitor.log_event(event_type, data)
 
-
+# Debbugging function to analyze logs
 def analyze_logs(log_file: str) -> Dict[str, Any]:
     """Analyze a JSONL log file and generate statistics.
 

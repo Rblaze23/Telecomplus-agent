@@ -200,7 +200,7 @@ def query_pdf(question: str, db, k: int = 10) -> List[str]:
     
     return answers
 
-
+# debugging function to get answers with scores
 def query_pdf_with_score(question: str, db, k: int = 10, 
                          score_threshold: float = 0.7) -> List[tuple]:
     """Search PDF documents with relevance scores."""
