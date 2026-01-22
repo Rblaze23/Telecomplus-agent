@@ -18,51 +18,7 @@ An agentic multi-source system for telecom customer support, combining semantic 
 
 ## 🏗️ System Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                         USER                                 │
-│                  (Natural Language Query)                    │
-└──────────────────────┬──────────────────────────────────────┘
-                       │
-                       ▼
-┌─────────────────────────────────────────────────────────────┐
-│              ORCHESTRATOR (orchestrator.py)                  │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  1. Query Classification                             │   │
-│  │     → Determines: FAQ, DATA, or BOTH                 │   │
-│  │     → Identifies relevant data sources               │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                       │                                      │
-│       ┌───────────────┴───────────────┐                     │
-│       ▼                               ▼                     │
-│  ┌─────────┐                    ┌──────────┐               │
-│  │   FAQ   │                    │   DATA   │               │
-│  │  (PDFs) │                    │ (Excel)  │               │
-│  └─────────┘                    └──────────┘               │
-│       │                               │                     │
-│       ▼                               ▼                     │
-│  vector_db.py                   Pandas Queries              │
-│  - FAISS search                 - Client-specific info      │
-│  - Semantic retrieval           - Real-time data access     │
-│       │                               │                     │
-│       └───────────────┬───────────────┘                     │
-│                       ▼                                      │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Final Response Generation (Gemini LLM)              │   │
-│  │  → Intelligent synthesis                             │   │
-│  │  → Natural language in French                        │   │
-│  └──────────────────────────────────────────────────────┘   │
-└──────────────────────┬──────────────────────────────────────┘
-                       │
-                       ▼
-┌─────────────────────────────────────────────────────────────┐
-│            MONITORING (Dual-Layer Architecture)              │
-│  Layer 1: LangSmith - Cloud tracing & visual dashboard       │
-│  Layer 2: JSONL logs - Local storage & offline analysis      │
-│  - Complete request traceability                             │
-│  - Performance metrics & error tracking                      │
-└─────────────────────────────────────────────────────────────┘
-```
+![alt text](data/arch.gif)
 
 ---
 
